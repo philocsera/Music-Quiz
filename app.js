@@ -1,11 +1,11 @@
-const fs = require('fs')
-const express = require('express')
-const socket = require('socket.io')
-const http = require('http')
+import fs from 'fs';
+import express from 'express'
+import {Server} from 'socket.io'
+import http from 'http'
 
 const app = express()
 const server = http.createServer(app);
-const io = socket(server)
+const io = new Server(server)
 
 app.use('/css', express.static('./static/css'))
 app.use('/js', express.static('./static/js'))
